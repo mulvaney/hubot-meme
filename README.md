@@ -15,10 +15,8 @@ Installation
 
 1.  Set up an account at http://memegenerator.net
 2.  Set these two environment variables:
-
-MEME_GENERATOR_USER
-MEME_GENERATOR_PASSWORD
-
+    `MEME_GENERATOR_USER
+    MEME_GENERATOR_PASSWORD`
 3.  Put meme.coffee in your hubot-scripts directory
 
 
