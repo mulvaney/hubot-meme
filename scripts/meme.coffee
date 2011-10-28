@@ -39,15 +39,12 @@ module.exports = (robot) ->
         if info.success
 
           # you have to fetch the instanceURL first, before its
-          #  available in the cache.  Just do this to seed the cache
+          # available in the cache.  Just do this to seed the cache
           # so we can link the image
 
-          # except getting it like this does not seem to be enough
-
-          msg.send info.result.instanceUrl
-          msg.http(info.result.instanceUrl).get()
+          msg.http(info.result.instanceUrl).get() (err, res, body) ->
+            # msg.send res.headers
             
-
           msg.send "http://memegenerator.net" + info.result.instanceImageUrl
         else
           msg.send "Fail: " + body
