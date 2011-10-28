@@ -6,9 +6,12 @@ A hubot script for generating memes at http://memegenerator.net
 Usage
 =====
 
-`hubot meme "first line of text" "second line of text"`
+`hubot meme list`
 
-The double quotes are necessary at this point.
+`hubot meme create "generator name" "first line of text" "second line of text"`
+
+The double quotes are necessary at this point.  The generator name
+should come from the list command.
 
 Installation
 ============
