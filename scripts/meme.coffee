@@ -61,10 +61,8 @@ module.exports = (robot) ->
     msg.send "Commands:\n meme list\n meme create \"generator\" \"text0\" \"text1\""
 
   robot.respond /(meme )list/i, (msg) ->
-     msg.send "Available generators:"
-     for generator of generators
-       msg.send generator 
-
+    list = (g for g of generators)
+    msg.send "Available generators:\n " + list.join("\n ")
 
   robot.respond /(meme )create(.*)/i, (msg) ->
     args = msg.match[2]
