@@ -104,7 +104,10 @@ module.exports = (robot) ->
               msg.http(info.result.instanceUrl).get() (err, res, body) ->
                 # msg.send res.headers
             
-              msg.send "http://memegenerator.net" + info.result.instanceImageUrl
+              msg.send if info.result.instanceImageUrl.match(/https?\:\/\//)
+              then info.result.instanceImageUrl
+              else "http://memegenerator.net" + info.result.instanceImageUrl
+              
             else
               msg.send "Fail: " + body
 
